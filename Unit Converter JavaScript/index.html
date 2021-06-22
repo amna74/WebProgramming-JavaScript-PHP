@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Unit Converter </title>
+	<link rel="stylesheet" href= "style.css">	
+	<script src = "_Jscripts.js"></script>
+</head>
+
+<body>
+	<div class="header">
+		<h1>Web Programming</h1>
+		<h1> Unit Converter</h1>
+		
+		
+	</div>
+	<nav>
+		
+		<p>
+			<label>  Enter your Value  </label>
+			<input id="inputData" type="number" placeholder="Enter Value" onfocus="this.value=''" >
+		</p>
+		<div class="column">
+			<a  class="btn" onclick='btn1()' id="O-M">Ounce &#8594 Mililiter</a>
+			<p id="result1"></p>
+			
+			
+			<a  type="button" onclick='btn2()' class="btn" id="M-O"> Mililiter &#8594 Ounce </a>
+			<p id="result2"></p>
+
+			<a  class="btn" onclick='btn3()' id="L-M">Liter &#8594 Mililiter</a>
+			<p id="result3"></p>
+		</div> 
+		<div class="column">
+			<a  class="btn" onclick='btn4()' id="M-L">Mililiter &#8594 Liter</a>
+			<p id="result4"></p>
+
+			<a  class="btn" onclick='btn5()' id="I-C">Inches &#8594 Centimeter</a>
+			<p id="result5"></p>
+
+			<a  class="btn" onclick='btn6()' id="C-I">Centimeter &#8594 Inches</a>
+			<p id="result6"></p>
+
+		</div>
+		<div class="column">
+			<a onclick='btn7()' class="btn" id="P-K">Pounds &#8594 Kilograms</a>
+			<p id="result7"></p>
+
+			<a onclick='btn8()' class="btn" id="K-P">Kilograms &#8594 Pounds</a>
+			<p id="result8"></p>
+
+		</div>
+		<div class="column">
+			<a onclick='clear_data()' class="btn" id="clear">CLEAR</a>
+
+		</div>
+
+	</nav>
+	
+
+</body>
+</html>
