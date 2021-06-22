@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Even Odd Game </title>
+	<link rel="stylesheet" href= "style.css">	
+</head>
+
+<body onload="GameFunction()">
+
+<script>
+
+
+function GameFunction() {
+  var number = prompt("Enter Number Between 1-9", "0");
+  if (number != null && !isNaN(number) && number<10 && number>0) {
+	
+	//computer must be odd
+	
+	var random_no=Math.floor(Math.random() * 10);
+	var user_input_not=number;
+	var even=0;
+	var odd=0;
+	
+	var plusboth=parseInt(random_no)+parseInt(user_input_not);
+	
+	
+	var msg_for_alert="Your Number "+user_input_not +"\nComputer No "+ random_no+"\nBoth Plus "+ plusboth;
+	if(plusboth % 2 == 0)
+	even=1;
+	else
+	odd=1;
+	
+	var old_odd_score=localStorage.getItem("odd");
+	if(isNaN(old_odd_score))
+		old_odd_score=0;
+	
+	var old_even_score=localStorage.getItem("even");
+	if(isNaN(old_even_score))
+		old_even_score=0;
+		
+		
+	var new_odd_score=parseInt(old_odd_score)+parseInt(odd);
+	if(isNaN(new_odd_score))
+		new_odd_score=0;
+	
+	
+	var new_even_score=parseInt(old_even_score)+parseInt(even);
+	if(isNaN(new_even_score))
+		new_even_score=0;
+	
+		
+	localStorage.setItem("odd", new_odd_score);
+	localStorage.setItem("even", new_even_score);
+	
+	if(odd==1)
+		msg_for_alert+="\nYou Loooose Number Is ODD";
+	else
+	if(even==1)
+		msg_for_alert+="\nYou Win Number Is Even";
+	
+	
+	
+	msg_for_alert+="\nEven Score "+ new_even_score + " Odd Score "+ new_odd_score;
+	
+	alert(msg_for_alert);
+	
+	r = confirm("Do You Want To Play Again!");
+	
+	if (r == true) {
+	  location.reload();
+	} else {
+	
+		alert("Final Score \nEven Score "+ new_even_score + " Odd Score "+ new_odd_score);
+	  //resetting the score
+	  localStorage.clear();
+	}
+	
+  }
+  else
+  {
+  alert("Please Enter numeric value . less then 10");
+  location.reload();
+  }
+}
+</script>
+<a href="index.html" class="btn">Exit &#8594 </a>
+
+</body>
+</html>
